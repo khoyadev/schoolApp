@@ -39,13 +39,16 @@ function afficherDetail(apprenantdetails){
         </div>
         <div class="col-7 mt-4">
             <div class="row">
+            <div class="col-6">
+            <img src="images/undraw_profile_pic_ic5t.png" class="img img-fluid float-start w-25" alt="">
+            </div>
                 <h1 id="prenom">${apprenantdetails.prenom +" "+ apprenantdetails.nom}</h1>
             </div>
             <div class="row">
                 <p id="niveau">Niveau : ${apprenantdetails.niveau}</p>
             </div>
             <div class="row">
-                <p>Bio: ${apprenantdetails.biographie}</p>
+                <p>Biographie: ${apprenantdetails.biographie}</p>
             </div>
         </div>
       `

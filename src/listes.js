@@ -30,7 +30,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     cartes.insertAdjacentHTML(
       "beforeend",
       `
-   <div class="card mb-3" id="numerocard-${idCard}">
+   <div class="card mb-3 w-75 " id="numerocard-${idCard}">
    <div class=" d-flex justify-content-end">
    <i class="bi bi-pencil-fill text-warning card-link btn editer" id="${idButtonModifier}" onclick="modifier(this.id)" style="font-size:2rem">
   
@@ -39,11 +39,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
        style="font-size:2rem;color:#ce0033;"></i>
   </div>
     <div class="card-body">
+    <div class="col-6">
+    <img src="images/undraw_profile_pic_ic5t.png" class="img img-fluid float-start w-25" alt="">
+    </div>
       <h5 class="card-title" id="bb">${idPrenom} ${idNom} </h5>
        <p class="card-text" id="">${idBio}</p>
        <p class="card-text text-end" id=""><small class="text-muted">${idcardNiveau}</small></p>
      </div>
-     <button type="button" id="details-${nouvelleApprenant.id}">Details</button>
+     <button type="button" class="btn btn-success" id="details-${nouvelleApprenant.id}">Details</button>
   </div> 
       `
     );
@@ -54,3 +57,26 @@ window.addEventListener("DOMContentLoaded", (event) => {
       window.location.href = "details.html"
     })
   }
+  
+
+  function supprimer(index) {
+
+    fetch(API_URL+"?id=eq."+index, {
+      method: "DELETE",
+      headers: {
+        apikey: API_KEY,
+        "Content-Type": "application/json",
+      Prefer: "return=representation"
+      }
+    }).then((response) => response.json())
+    .then((data)=>{
+      
+      console.log("coucou");
+      console.log(data);
+      var idcard = document.getElementById("numerocard-"+index)
+         
+      cartes.removeChild(idcard)
+    })
+
+  
+}

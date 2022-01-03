@@ -43,6 +43,7 @@ const API_KEY ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI
        style="font-size:2rem;color:#ce0033;"></i>
   </div>
     <div class="card-body">
+    <img src="images/undraw_profile_pic_ic5t.png" class="img img-fluid float-start w-25" alt="">
       <h5 class="card-title" id="bb">${idPrenom} ${idNom} </h5>
        <p class="card-text" id="">${idBio}</p>
        <p class="card-text text-end" id=""><small class="text-muted">${idcardNiveau}</small></p>
@@ -96,7 +97,7 @@ const API_KEY ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI
             element.Bio = inputBiographie.value
             element.Niveau = inputNiveau.value
           
-            if (element.Nom.trim().length < 5 || element.Prenom.trim().length < 10) {
+            if (element.Nom.trim().length < 1 || element.Prenom.trim().length < 1) {
               alert("veillez saisir de bonne information")
           
               return
@@ -159,7 +160,7 @@ const API_KEY ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI
     const bioSaisi = inputBiographie.value
     const niveauSaisi = inputNiveau.value
   
-    if (nomSaisi.trim().length < 5 || prenomSaisi.trim().length < 10) {
+    if (nomSaisi.trim().length < 1 || prenomSaisi.trim().length < 1) {
       alert("veillez saisir de bonne information")
   
       return
