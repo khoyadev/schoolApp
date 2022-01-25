@@ -30,7 +30,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     cartes.insertAdjacentHTML(
       "beforeend",
       `
-   <div class="card mb-3 w-75 " id="numerocard-${idCard}">
+   <div class=" col-6 card mb-3 w-75 " id="numerocard-${idCard}">
    <div class=" d-flex justify-content-end">
    <i class="bi bi-pencil-fill text-warning card-link btn editer" id="${idButtonModifier}" onclick="modifier(this.id)" style="font-size:2rem">
   
@@ -79,4 +79,57 @@ window.addEventListener("DOMContentLoaded", (event) => {
     })
 
   
+}
+let form = document.getElementById("idformulaire")
+const inputNom = document.getElementById("validationCustom01")
+const inputPrenom = document.getElementById("validationCustom02")
+const inputNiveau = document.getElementById("validationCustom04")
+const inputBiographie = document.getElementById("validationCustom03")
+
+
+function modifier(index) {
+form.classList.remove('d-none')
+  console.log("coucou");
+  fetch(API_URL+"?id=eq."+index, {
+    method: "GET",
+    headers: {
+      apikey: API_KEY,
+      "Content-Type": "application/json",
+      Prefer: "return=representation"
+    },
+  })
+    .then((response) => response.json())
+    .then((schoolApp) => {
+      schoolApp.forEach((liste) => {
+        console.log(liste)
+      inputNom.value = liste.nom
+      inputPrenom.value = liste.prenom
+      inputBiographie.value = liste.biographie
+      inputNiveau.value = liste.niveau
+      const idcard = document.getElementById("numerocard-"+index)
+      idcard.style.display="none"
+    })
+     
+    })
+    const btnModifier = document.querySelector(".btnModifier")
+    btnModifier.addEventListener("click", (event) => {
+      event.preventDefault()
+      event.stopPropagation()
+      fetch(API_URL + "?id=eq." + index, {
+        method: "PATCH",
+        headers: {
+          apikey: API_KEY,
+          "Content-Type": "application/json",
+          Prefer: "return=representation"
+        },
+        body: JSON.stringify({ nom : inputNom.value,
+          prenom : inputPrenom.value,
+          biographie : inputBiographie.value,
+          niveau : inputNiveau.value}),
+      }).then((response) => response.json())
+      console.log(index)
+
+             })
+       
+
 }

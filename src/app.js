@@ -1,7 +1,17 @@
 const API_URL = "https://iebidjtdmmvhdobnesda.supabase.co/rest/v1/schoolApp"
 const API_KEY ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzOTU4NzU0NywiZXhwIjoxOTU1MTYzNTQ3fQ.yyW3TU7N--Z_fR0qDm-gWJ8LllGuNjFPlDz7oDi86CE"
 
-  
+ //LES COMPETENCES
+ const inputc1f = document.getElementById("c1f")
+ const inputc2f = document.getElementById("c2f")
+ const inputc3f = document.getElementById("c3f")
+ const inputc4f = document.getElementById("c4f")
+
+ const inputc1b = document.getElementById("c1b")
+ const inputc2b = document.getElementById("c2b")
+ const inputc3b = document.getElementById("c3b")
+ const inputc4b = document.getElementById("c4b")
+
   if(localStorage.getItem('apprenants')== null){
     var tableau = []
   }else if (localStorage.getItem('apprenants') !== "undefined") {
@@ -75,6 +85,8 @@ const API_KEY ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI
 }
 
 
+const front = document.getElementById("front")
+const back = document.getElementById("back")
   function modifier(index) {
     tableau.forEach(function (element) {
         const idcard = document.getElementById("numerocard-"+tableau.indexOf(element))
@@ -85,6 +97,8 @@ const API_KEY ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI
         inputBiographie.value = element.Bio
         inputNiveau.value = element.Niveau
         btnAjouter.classList.add('d-none')
+        front.classList.add('d-none')
+        back.classList.add('d-none')
         btnModifier.classList.remove('d-none')
         const idcard = document.getElementById("numerocard-"+index)
         idcard.style.display="none"
@@ -159,6 +173,15 @@ const API_KEY ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI
     const prenomSaisi = inputPrenom.value
     const bioSaisi = inputBiographie.value
     const niveauSaisi = inputNiveau.value
+
+    const c1f = inputc1f.value
+    const c2f = inputc2f.value
+    const c3f = inputc3f.value
+    const c4f = inputc4f.value
+    const c1b = inputc1b.value
+    const c2b = inputc2b.value
+    const c3b = inputc3b.value
+    const c4b = inputc4b.value
   
     if (nomSaisi.trim().length < 1 || prenomSaisi.trim().length < 1) {
       alert("veillez saisir de bonne information")
@@ -171,7 +194,15 @@ const API_KEY ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI
         Nom: nomSaisi,
         Prenom: prenomSaisi,
         Bio: bioSaisi,
-        Niveau: niveauSaisi
+        Niveau: niveauSaisi,
+        c1f:c1f,
+        c2f:c2f,
+        c3f:c3f,
+        c4f:c4f,
+        c1b:c1b,
+        c2b:c2b,
+        c3b:c3b,
+        c4b:c4b
       }
       //console.log(nouvelleApprenant.NomPrenom);
       tableau.push(nouvelleApprenant)
@@ -180,8 +211,6 @@ const API_KEY ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI
       creationApprenant(nouvelleApprenant)
       localStorage.setItem('apprenants', JSON.stringify(tableau))
   
-  
-      console.log(tableau);
     }
   
   })
@@ -205,8 +234,15 @@ save.addEventListener("click", (event) => {
       prenom: element.Prenom,
       niveau: element.Niveau,
       biographie: element.Bio,
+      c1f: element.c1f,
+      c2f: element.c2f,
+      c3f: element.c3f,
+      c4f: element.c4f,
+      c1b: element.c1b,
+      c2b: element.c2b,
+      c3b: element.c3b,
+      c4b: element.c4b,
       
-     
     }
   //ENVOYER LES DONNEES VERS SUPABASE
   fetch(API_URL, {
@@ -221,5 +257,8 @@ save.addEventListener("click", (event) => {
 } )
 localStorage.setItem("apprenants", JSON.stringify(tableau))
 localStorage.removeItem("apprenants");
-
+let cards = document.querySelectorAll(".card")
+cards.forEach(function (element) {
+  divContainerListApp.removeChild(element)
+})
 })

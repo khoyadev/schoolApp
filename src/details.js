@@ -51,6 +51,82 @@ function afficherDetail(apprenantdetails){
                 <p>Biographie: ${apprenantdetails.biographie}</p>
             </div>
         </div>
+        <div class="row align-items-center justify-content-center" style="text-align:center; width: 100%;">
+        <h1 style="text-decoration: underline;">Compétences</h1> 
+        <h6>Front-End</h6>
+        <div class="row">
+            <div class="col-4">
+                <p>Maquetter une application</p>
+            </div>
+                <div class="col-8 progress">
+                <div class="progress-bar bg-success" role="progressbar" style="width: ${apprenantdetails.c1f}%" aria-valuenow="${apprenantdetails.c1f}" aria-valuemin="0" aria-valuemax="100">${apprenantdetails.c1f}%</div>
+              </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <p>Réaliser une interface utilisateur web statique et adaptable</p>
+            </div>
+                <div class="col-8 progress">
+                <div class="progress-bar bg-info" role="progressbar" style="width: ${apprenantdetails.c2f}%" aria-valuenow="${apprenantdetails.c2f}" aria-valuemin="0" aria-valuemax="100">${apprenantdetails.c2f}%</div>
+              </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-4">
+                <p>Développer une interface utilisateur web dynamique</p>
+            </div>
+                <div class="col-8 progress">
+                <div class="progress-bar bg-warning" role="progressbar" style="width: ${apprenantdetails.c3f}%" aria-valuenow="${apprenantdetails.c3f}" aria-valuemin="0" aria-valuemax="100">${apprenantdetails.c3f}%</div>
+              </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <p>Réaliser une interface utilisateur avec une solution de gestion de contenu ou e-commerce</p>
+            </div>
+                <div class="col-8 progress">
+            <div class="progress-bar bg-danger" role="progressbar" style="width: ${apprenantdetails.c4f}%" aria-valuenow="${apprenantdetails.c4f}" aria-valuemin="0" aria-valuemax="100">${apprenantdetails.c1f}%</div>
+            </div> 
+        </div> 
+        <h6>Back-End</h6>
+        <div class="row">
+            <div class="col-4">
+                <p>Créer une base de donnée</p>
+            </div>
+                <div class="col-8 progress">
+                <div class="progress-bar bg-success" role="progressbar" style="width: ${apprenantdetails.c1b}%" aria-valuenow="${apprenantdetails.c1b}" aria-valuemin="0" aria-valuemax="100">${apprenantdetails.c1b}%</div>
+              </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <p>Développer les composants d’accès aux données</p>
+            </div>
+                <div class="col-8 progress">
+                <div class="progress-bar bg-info" role="progressbar" style="width: ${apprenantdetails.c2b}%" aria-valuenow="${apprenantdetails.c2b}" aria-valuemin="0" aria-valuemax="100">${apprenantdetails.c2b}%</div>
+              </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-4">
+                <p>Développer la partie back-end d’une application web ou web mobile</p>
+            </div>
+            <div class="col-8 progress">
+                <div class="progress-bar bg-warning" role="progressbar" style="width: ${apprenantdetails.c3b}%" aria-valuenow="${apprenantdetails.c3b}" aria-valuemin="0" aria-valuemax="100">${apprenantdetails.c3b}%</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <p>Elaborer et mettre en œuvre des composants dans une application de gestion de contenu ou e-commerce</p>
+            </div>
+                <div class="col-8 progress">
+            <div class="progress-bar bg-danger" role="progressbar" style="width: ${apprenantdetails.c4b}%" aria-valuenow="${apprenantdetails.c4b}" aria-valuemin="0" aria-valuemax="100">${apprenantdetails.c4b}%</div>
+            </div> 
+        </div> 
+    </div>
+        
       `
     )
 }

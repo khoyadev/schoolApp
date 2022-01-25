@@ -38,7 +38,47 @@
     </div>
 
     <div class="row" id="cartes">
-        
+      <form class="col-6 g-3 needs-validation d-flex flex-column d-none" id ="idformulaire" novalidate>
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">Nom</label>
+          <input type="text" class="form-control" id="validationCustom01"  required>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Prenom</label>
+          <input type="text" class="form-control" id="validationCustom02" required>
+        </div>
+      
+        <div class="col-md-3">
+          <label for="validationCustom04" class="form-label">Niveau</label>
+          <select class="form-select" id="validationCustom04" required>
+            <option selected disabled value="">Choisir...</option>
+            <option>Niveau 1</option>
+            <option>Niveau 2</option>
+            <option>Niveau 3</option>
+          </select>
+          <div class="invalid-feedback">
+            choisir un niveau
+          </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom03" class="form-label">biographie</label>
+            <textarea class="form-control" cols="3" row="1" id="validationCustom03" placeholder="" required></textarea>
+            <div class="invalid-feedback">
+              la biographie
+            </div>
+        </div>
+        <div>
+            <p id="limite-text">
+                Contenu saisi
+                <span id="text-progress">00 </span> / 130
+            </p>
+            <p id="text-restant"></p>
+        </div>
+        <div class="col-12">
+          
+          <button class="btn btn-warning  btnModifier"  id="btnModifier" type="button">Modifier</button>
+        </div>
+        </form>
     </div>
 
     

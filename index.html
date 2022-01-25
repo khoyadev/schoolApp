@@ -31,17 +31,21 @@
   </div>
 <div class="container-fluid">
 <div class="row justify-content-around">
-    <form class="col-6 g-3 needs-validation d-flex flex-column" id ="idformulaire" novalidate>
-      <div class="col-md-4">
+    <form class="col-6 g-3 bg-light shadow d-flex flex-column" id ="idformulaire" novalidate>
+      <!-- <div class="col-md-4 mb-3">
+        <input type="file" class="form-control" aria-label="file example" required>
+        <div class="invalid-feedback">Example invalid form file feedback</div>
+      </div> -->
+      <div class="col-md-4 ms-5 w-50 mt-3">
         <label for="validationCustom01" class="form-label">Nom</label>
         <input type="text" class="form-control" id="validationCustom01"  required>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 ms-5 w-50 mt-3">
         <label for="validationCustom02" class="form-label">Prenom</label>
         <input type="text" class="form-control" id="validationCustom02" required>
       </div>
     
-      <div class="col-md-3">
+      <div class="col-md-3 ms-5 w-50 mt-3">
         <label for="validationCustom04" class="form-label">Niveau</label>
         <select class="form-select" id="validationCustom04" required>
           <option selected disabled value="">Choisir...</option>
@@ -53,7 +57,32 @@
           choisir un niveau
         </div>
       </div>
-      <div class="col-md-4">
+      
+      <div class="col-md-3 ms-5 w-50 mt-3 " id="front">
+        <h2>Competences Front-End</h2>
+        <label for="validationCustom04" class="form-label">Maquetter une application</label>
+        <input type="number" class="form-control" id="c1f" required>
+        <label for="validationCustom04" class="form-label">Réaliser une interface utilisateur web statique et adaptable</label>
+        <input type="number" class="form-control" id="c2f" required>
+        <label for="validationCustom04" class="form-label">Développer une interface utilisateur web dynamique</label>
+        <input type="number" class="form-control" id="c3f" required>
+        <label for="validationCustom04" class="form-label">Réaliser une interface utilisateur avec une solution de gestion de contenu ou e- commerce</label>
+        <input type="number" class="form-control" id="c4f" required>
+      </div>
+
+      <div class="col-md-3 ms-5 w-50 mt-3 " id="back">
+        <h2>Competences Back-End</h2>
+        <label for="validationCustom04" class="form-label">Créer une base de données</label>
+        <input type="number" class="form-control" id="c1b" required>
+        <label for="validationCustom04" class="form-label">Développer les composants d’accès aux données</label>
+        <input type="number" class="form-control" id="c2b" required>
+        <label for="validationCustom04" class="form-label">Développer la partie back-end d’une application web ou web mobile</label>
+        <input type="number" class="form-control" id="c3b" required>
+        <label for="validationCustom04" class="form-label">Elaborer et mettre en œuvre des composants dans une application de gestion de contenu ou e-commerce</label>
+        <input type="number" class="form-control" id="c4b" required>
+      </div>
+
+      <div class="col-md-4 ms-5 w-50 mt-3">
           <label for="validationCustom03" class="form-label">biographie</label>
           <textarea class="form-control" cols="3" row="1" id="validationCustom03" placeholder="" required></textarea>
           <div class="invalid-feedback">
@@ -61,15 +90,15 @@
           </div>
       </div>
       <div>
-          <p id="limite-text">
+          <p id="limite-text" class="mt-5">
               Contenu saisi
               <span id="text-progress">00 </span> / 130
           </p>
           <p id="text-restant"></p>
       </div>
       <div class="col-12">
-        <button class="btn btn-primary" disabled id="btnAjouter" type="submit">Ajouter</button>
-        <button class="btn btn-warning  btnModifier d-none"  id="btnModifier" type="button">Modifier</button>
+        <button class="btn btn-primary mb-5" disabled id="btnAjouter" type="submit">Ajouter</button>
+        <button class="btn btn-warning  btnModifier d-none mb-5"  id="btnModifier" type="button">Modifier</button>
       </div>
       </form>
       <div  class="col-6">
